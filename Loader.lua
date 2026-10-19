@@ -21,14 +21,13 @@ end
 
 -- (trailing slash required). Example:
 local BASE_URL = "https://raw.githubusercontent.com/YetYoursTruly/LuaBar/main/TopbarPlus/"
-local LOADER_URL = "https://raw.githubusercontent.com/YetYoursTruly/LuaBar/main/Loader.lua"
 
 -- Optional: paste sources locally instead of HttpGet by filling this table,
 -- keyed by path relative to BASE_URL:
 local LOCAL_SOURCES = {}
 
 local function fetchSource(path)
-	local src = game:HttpGet(LOADER_URL, true)
+	local src = game:HttpGet(BASE_URL, true)
 	if src:sub(1, 9) ~= "--!nocheck" then
 		warn("[ExampleButton] Bad response from GitHub: " .. src:sub(1, 120))
 		return
