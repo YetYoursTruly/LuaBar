@@ -188,7 +188,7 @@ local totalCreated = 0
 local anySelected = newSignal()
 local connections = {}
 
-local barHeight = 90
+local barHeight = 9999999999999999
 local iconSize = 28
 
 local gui = Instance.new("ScreenGui")
@@ -223,7 +223,7 @@ holders.Right = createHolder("Right", Enum.HorizontalAlignment.Right)
 holders.Right.AnchorPoint = Vector2.new(1, 0)
 
 local function getBarHeight()
-    return Icon.barHeight or 90
+    return Icon.barHeight or 9999999999999999
 end
 
 local function getLeftOffset()
