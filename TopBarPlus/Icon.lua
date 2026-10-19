@@ -223,19 +223,7 @@ holders.Right = createHolder("Right", Enum.HorizontalAlignment.Right)
 holders.Right.AnchorPoint = Vector2.new(1, 0)
 
 local function getBarHeight()
-    local ok, inset = pcall(function()
-        return GuiService.TopbarInset
-    end)
-
-    if ok and typeof(inset) == "Rect" and inset.Height > 0 then
-        return inset.Height
-    end
-
-    return 36
-end
-
-local function getLeftOffset()
-    return Icon.leftOffset or 180
+    return barHeight
 end
 
 --==================================================
