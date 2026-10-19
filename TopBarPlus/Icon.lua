@@ -180,7 +180,7 @@ end
 local Icon = {}
 Icon.__index = Icon
 
-Icon.leftOffset = nil -- set a number to override the automatic left offset
+Icon.leftOffset = 16 -- set a number to override the automatic left offset
 Icon.rightOffset = 16
 
 local icons = {}
