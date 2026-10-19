@@ -180,7 +180,7 @@ end
 local Icon = {}
 Icon.__index = Icon
 
-Icon.leftOffset = 99999 -- set a number to override the automatic left offset
+Icon.leftOffset = nil -- set a number to override the automatic left offset
 Icon.rightOffset = 16
 
 local icons = {}
@@ -245,10 +245,10 @@ local function getLeftOffset()
     end)
 
     if ok and chatEnabled == false then
-        return 68 + Icon.leftOffset
+        return 68
     end
 
-    return 124 + Icon.leftOffset
+    return 124
 end
 
 --==================================================
