@@ -790,7 +790,7 @@ local function relayout()
     iconSize = math.clamp(barHeight - 8, 28, 44)
 
     local left = getLeftOffset()
-    local right = Icon.rightOffset
+    local right = tonumber(Icon.rightOffset) or 16
 
     holders.Left.Position = UDim2.fromOffset(left, 0)
     holders.Left.Size = UDim2.new(0.5, -left, 0, barHeight)
