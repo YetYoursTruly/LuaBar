@@ -188,7 +188,7 @@ local totalCreated = 0
 local anySelected = newSignal()
 local connections = {}
 
-local barHeight = 36
+local barHeight = 30
 local iconSize = 28
 
 local gui = Instance.new("ScreenGui")
