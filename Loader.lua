@@ -27,10 +27,14 @@ local BASE_URL = "https://raw.githubusercontent.com/YetYoursTruly/LuaBar/main/To
 local LOCAL_SOURCES = {}
 
 local function fetchSource(path)
-	if LOCAL_SOURCES[path] then
-		return LOCAL_SOURCES[path]
+	local src = game:HttpGet(LOADER_URL, true)
+	if src:sub(1, 9) ~= "--!nocheck" then
+		warn("[ExampleButton] Bad response from GitHub: " .. src:sub(1, 120))
+		return
 	end
-	return game:HttpGet(BASE_URL .. path, true)
+	local success, Icon = pcall(function()
+		return loadstring(src)()
+	end)
 end
 
 --==================================================
