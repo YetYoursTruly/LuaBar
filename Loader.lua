@@ -20,21 +20,21 @@ if type(env.TopbarPlusCleanup) == "function" then
 end
 
 -- (trailing slash required). Example:
-local BASE_URL = "https://raw.githubusercontent.com/YetYoursTruly/LuaBar/main/TopbarPlus/"
+local BASE_URL = "https://raw.githubusercontent.com/YetYoursTruly/LuaBar/main/TopBarPlus/"
 
 -- Optional: paste sources locally instead of HttpGet by filling this table,
 -- keyed by path relative to BASE_URL:
 local LOCAL_SOURCES = {}
 
 local function fetchSource(path)
-	local src = game:HttpGet(BASE_URL, true)
-	if src:sub(1, 9) ~= "--!nocheck" then
-		warn("[ExampleButton] Bad response from GitHub: " .. src:sub(1, 120))
-		return
+	if LOCAL_SOURCES[path] then
+		return LOCAL_SOURCES[path]
 	end
-	local success, Icon = pcall(function()
-		return loadstring(src)()
-	end)
+	local src = game:HttpGet(BASE_URL .. path, true)
+	if src:sub(1, 2) ~= "--" then
+		error("[LuaBar] Bad response from GitHub for " .. path .. ": " .. src:sub(1, 120))
+	end
+	return src
 end
 
 --==================================================
