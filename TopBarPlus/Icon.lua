@@ -235,20 +235,7 @@ local function getBarHeight()
 end
 
 local function getLeftOffset()
-    if Icon.leftOffset then
-        return Icon.leftOffset
-    end
-
-    -- Roblox menu button (+ chat button when enabled) sit at the far left.
-    local ok, chatEnabled = pcall(function()
-        return StarterGui:GetCoreGuiEnabled(Enum.CoreGuiType.Chat)
-    end)
-
-    if ok and chatEnabled == false then
-        return 68
-    end
-
-    return 124
+    return Icon.leftOffset or 180
 end
 
 --==================================================
