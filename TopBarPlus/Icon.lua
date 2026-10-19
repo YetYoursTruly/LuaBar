@@ -245,10 +245,10 @@ local function getLeftOffset()
     end)
 
     if ok and chatEnabled == false then
-        return 68
+        return 68 + Icon.leftOffset
     end
 
-    return 124
+    return 124 + Icon.leftOffset
 end
 
 --==================================================
