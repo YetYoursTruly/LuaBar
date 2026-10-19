@@ -797,6 +797,8 @@ Icon.relayout = relayout
 -- CLEANUP + START
 --==================================================
 
+relayout()
+
 local cleanedUp = false
 
 local function cleanup()
