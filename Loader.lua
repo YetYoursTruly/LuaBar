@@ -31,8 +31,8 @@ local function fetchSource(path)
 		return LOCAL_SOURCES[path]
 	end
 	local src = game:HttpGet(BASE_URL .. path, true)
-	if src:sub(1, 2) ~= "--" then
-		error("[LuaBar] Bad response from GitHub for " .. path .. ": " .. src:sub(1, 120))
+	if src:sub(1, 1) == "<" or src:find("API rate limit", 1, true) then
+		error("[LuaBar] Bad response for " .. path .. ": " .. src:sub(1, 120))
 	end
 	return src
 end
