@@ -223,7 +223,11 @@ holders.Right = createHolder("Right", Enum.HorizontalAlignment.Right)
 holders.Right.AnchorPoint = Vector2.new(1, 0)
 
 local function getBarHeight()
-    return barHeight
+    return Icon.barHeight or 30
+end
+
+local function getLeftOffset()
+    return Icon.leftOffset or 180
 end
 
 --==================================================
