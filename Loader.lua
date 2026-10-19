@@ -21,6 +21,7 @@ end
 
 -- (trailing slash required). Example:
 local BASE_URL = "https://raw.githubusercontent.com/YetYoursTruly/LuaBar/main/TopbarPlus/"
+local LOADER_URL = "https://raw.githubusercontent.com/YetYoursTruly/LuaBar/main/Loader.lua"
 
 -- Optional: paste sources locally instead of HttpGet by filling this table,
 -- keyed by path relative to BASE_URL:
